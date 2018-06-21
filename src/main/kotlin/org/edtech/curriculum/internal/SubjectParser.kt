@@ -14,7 +14,9 @@ class SubjectParser {
                 subjectData.designation,
                 subjectData.skolfsId,
                 normalizePurposes(toPurposes(subjectData.purposes)),
-                subjectData.courses.map { CourseParser(it).getCourse() }
+                subjectData.courses?.map { CourseParser(it).getCourse() },
+                null, // TODO
+                null // TODO
         )
     }
 

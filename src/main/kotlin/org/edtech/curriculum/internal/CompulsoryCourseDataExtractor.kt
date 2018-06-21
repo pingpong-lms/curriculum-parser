@@ -16,45 +16,56 @@ import java.time.format.DateTimeFormatter
  *
  * @param subjectDocument to extract information from
  */
-class CompulsoryCourseDataExtractor(private val subjectDocument: Document): CourseDataExtractor {
+class CompulsoryCourseDataExtractor(private val subjectDocument: Document) {
 
-    override fun getCourseData(): List<CourseHtml> {
+    fun getData(): GrData {
         val code = subjectDocument.select("code").first().text()
         val centralContents = subjectDocument.select("centralContent")
                 .map {
-                    Pair(it.select("year").text(),
+                    CentralContentGrHtml(it.select("year").text(),
                             convertDashListToList(fixHtmlEncoding(it.select("text").text())))
                 }.toList()
-        return centralContents.map {
-            CourseHtml("Årskurs ${it.first}",
-                    "",
-                    "${code}_${it.first}",
-                    it.first,
-                    "",
-                    it.second,
-                    getKnowledgeRequirements(it.first.toIntOrNull() ?: 0))
-        }
+
+        val knowledgeRequirements = getKnowledgeRequirements()
+
+        return GrData(centralContents, knowledgeRequirements)
     }
 
-    private fun getKnowledgeRequirements(targetYear: Int): Map<GradeStep, String> {
-        return subjectDocument
+    private fun getKnowledgeRequirements(): List<KnowledgeRequirementGrHtml> {
+        val reqs = listOf<KnowledgeRequirementGrHtml>()
+
+        val krTags = subjectDocument
                 // Get the subject code element
                 .select("knowledgeRequirement")
-                .filter {
-                    compareYearString(
-                            targetYear,
-                            it.select("year").text()
-                    )
-                }
                 .map {
                     val gradeStepText = it.select("gradeStep").text()
                     // Lower years has not grade steps, convert to G level
                     val gradeStep = if (gradeStepText.isEmpty()) GradeStep.G else GradeStep.valueOf(gradeStepText)
-                    Pair(
+                    Triple(
+                            it.select("year").text(),
                             gradeStep,
                             it.select("text").text())
+                }
+                .groupBy(
+                        {
+                            it.first
+                        },
+                        {
+                            Pair(it.second, it.third)
+                        }
+                )
+                .mapValues {
+                    it.value.groupBy(
+                            { it.first },
+                            { it.second }
+                    )
+                }
+                .map {
+                    // FIXME: it.value är en List!!! wtf...
+                    KnowledgeRequirementGrHtml(it.key, it.value)
 
-                }.toMap()
+                }.toList()
+        return reqs
     }
 
     /**
@@ -65,7 +76,7 @@ class CompulsoryCourseDataExtractor(private val subjectDocument: Document): Cour
         return if (yearParts.size > 1) {
             yearParts.getOrNull(0)?.toIntOrNull() ?: 0 <= targetYear
             yearParts.getOrNull(1)?.toIntOrNull() ?: 0 >= targetYear
-           } else {
+        } else {
             yearParts.getOrNull(0)?.toIntOrNull() ?: 0 >= targetYear
         }
     }

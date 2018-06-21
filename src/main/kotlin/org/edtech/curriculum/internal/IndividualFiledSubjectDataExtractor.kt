@@ -37,11 +37,13 @@ class IndividualFiledSubjectDataExtractor(private val skolverketFileArchive: Sko
                 extractString("skolfsId"),
                 convertDashListToList(extractString("purpose")),
                 extractCourses(openDataDocument),
+                extractCentralContent(openDataDocument),
+                extractKnowledgeRequirementParagraphs(openDataDocument),
                 applianceDate
            )
     }
 
-    private fun extractCourses(openDataDocument: Document): List<CourseHtml> {
+    private fun extractCourses(openDataDocument: Document): List<CourseHtml>? {
         // Get the list of courses and return as CoursePOJOs
         return when (syllabusType) {
             SyllabusType.GY, SyllabusType.GYS ->
@@ -49,7 +51,20 @@ class IndividualFiledSubjectDataExtractor(private val skolverketFileArchive: Sko
             SyllabusType.VUXGR ->
                 VuxCourseDataExtractor(openDataDocument).getCourseData()
             else ->
-                CompulsoryCourseDataExtractor(openDataDocument).getCourseData()
+                null
+//                CompulsoryCourseDataExtractor(openDataDocument).getCourseData()
         }
+    }
+
+    private fun extractCentralContent(openDataDocument: Document) : List<String>? {
+        if (syllabusType != SyllabusType.GR) return null
+
+        val courseData = CompulsoryCourseDataExtractor(openDataDocument).getCourseData()
+        return null
+    }
+
+    private fun extractKnowledgeRequirementParagraphs(openDataDocument: Document) : List<Map<GradeStep, String>>? {
+        if (syllabusType != SyllabusType.GR) return null
+        return null
     }
 }

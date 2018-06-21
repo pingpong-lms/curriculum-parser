@@ -15,7 +15,42 @@ data class Subject(
     val designation: String?,
     val skolfsId: String,
     val purposes: List<Purpose>,
-    val courses: List<Course>
+    val courses: List<Course>?,
+    val centralContent: List<CentralContentGr>?,
+    val knowledgeRequirementParagraphs: List<KnowledgeRequirementParagraphGr>?
+)
+
+data class SubjectGr(
+        val name: String,
+        val description: String,
+        val code: String,
+        val designation: String?,
+        val skolfsId: String,
+        val purposes: List<Purpose>,
+        val centralContent: List<CentralContentGr>,
+        val knowledgeRequirementParagraphs: List<KnowledgeRequirementParagraphGr>
+)
+
+enum class TypeOfCentralContent {
+    X, Y, Z
+}
+
+enum class TypeOfRequirement {
+    X, Y, Z
+}
+
+data class CentralContentGr(
+        val heading: String,
+        val year: YearGroup,
+        val type: TypeOfCentralContent?,
+        val lines: List<String>
+)
+
+data class KnowledgeRequirementParagraphGr(
+        val heading: String,
+        val year: Int,
+        val type: TypeOfRequirement?,
+        val knowledgeRequirements: List<KnowledgeRequirement>
 )
 
 data class Purpose(

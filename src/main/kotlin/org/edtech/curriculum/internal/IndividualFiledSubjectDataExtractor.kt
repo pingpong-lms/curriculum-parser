@@ -3,9 +3,7 @@ package org.edtech.curriculum.internal
 import org.edtech.curriculum.*
 import org.jsoup.Jsoup
 import org.jsoup.nodes.Document
-import org.jsoup.nodes.Element
 import org.jsoup.parser.Parser
-import org.jsoup.select.Elements
 import java.io.InputStream
 import java.time.Instant
 import java.time.format.DateTimeParseException
@@ -56,15 +54,14 @@ class IndividualFiledSubjectDataExtractor(private val skolverketFileArchive: Sko
         }
     }
 
-    private fun extractCentralContent(openDataDocument: Document) : List<String>? {
+    private fun extractCentralContent(openDataDocument: Document) : List<CentralContentGrHtml>? {
         if (syllabusType != SyllabusType.GR) return null
 
-        val courseData = CompulsoryCourseDataExtractor(openDataDocument).getCourseData()
-        return null
+        return CompulsoryCourseDataExtractor(openDataDocument).getData().centralContents
     }
 
-    private fun extractKnowledgeRequirementParagraphs(openDataDocument: Document) : List<Map<GradeStep, String>>? {
+    private fun extractKnowledgeRequirementParagraphs(openDataDocument: Document) : List<KnowledgeRequirementGrHtml>? {
         if (syllabusType != SyllabusType.GR) return null
-        return null
+        return CompulsoryCourseDataExtractor(openDataDocument).getData().knowledgeRequirement
     }
 }

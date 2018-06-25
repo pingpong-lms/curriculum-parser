@@ -1,11 +1,10 @@
 package org.edtech.curriculum.internal
 
-import org.edtech.curriculum.*
+import org.edtech.curriculum.CentralContentGrHtml
+import org.edtech.curriculum.GrData
+import org.edtech.curriculum.GradeStep
+import org.edtech.curriculum.KnowledgeRequirementGrHtml
 import org.jsoup.nodes.Document
-import java.time.Instant
-import java.time.LocalDateTime
-import java.time.ZoneOffset
-import java.time.format.DateTimeFormatter
 
 /**
  * Parses the open data supplied by skolverket for the compulsory subjects
@@ -23,7 +22,10 @@ class CompulsoryCourseDataExtractor(private val subjectDocument: Document) {
         val centralContents = subjectDocument.select("centralContent")
                 .map {
                     CentralContentGrHtml(it.select("year").text(),
-                            convertDashListToList(fixHtmlEncoding(it.select("text").text())))
+                            subjectDocument.select("centralCntHeading").text(),
+                            convertDashListToList(fixHtmlEncoding(it.select("text").text())),
+                            it.select("typeOfCentralContent")?.text()
+                    )
                 }.toList()
 
         val knowledgeRequirements = getKnowledgeRequirements()
@@ -32,40 +34,35 @@ class CompulsoryCourseDataExtractor(private val subjectDocument: Document) {
     }
 
     private fun getKnowledgeRequirements(): List<KnowledgeRequirementGrHtml> {
-        val reqs = listOf<KnowledgeRequirementGrHtml>()
-
-        val krTags = subjectDocument
+        return subjectDocument
                 // Get the subject code element
                 .select("knowledgeRequirement")
                 .map {
                     val gradeStepText = it.select("gradeStep").text()
                     // Lower years has not grade steps, convert to G level
                     val gradeStep = if (gradeStepText.isEmpty()) GradeStep.G else GradeStep.valueOf(gradeStepText)
-                    Triple(
-                            it.select("year").text(),
+                    KnowledgeRequirementDataItem(it.select("year").text(),
                             gradeStep,
-                            it.select("text").text())
+                            it.select("text").text(),
+                            it.select("typeOfRequirement").text())
                 }
-                .groupBy(
-                        {
-                            it.first
-                        },
-                        {
-                            Pair(it.second, it.third)
-                        }
-                )
+                .groupBy {
+                    DataItemKey(it.year, it.typeOfRequirement)
+                }
                 .mapValues {
-                    it.value.groupBy(
-                            { it.first },
-                            { it.second }
-                    )
+                    it.value.map {
+                        it.gradeStep to it.text
+                    }.toMap()
                 }
                 .map {
-                    // FIXME: it.value är en List!!! wtf...
-                    KnowledgeRequirementGrHtml(it.key, it.value)
-
-                }.toList()
-        return reqs
+                    KnowledgeRequirementGrHtml(
+                            it.key.year,
+                            subjectDocument.select("knowledgeReqsHeading").text(),
+                            it.key.typeOfRequirement,
+                            it.value
+                    )
+                }
+                .toList()
     }
 
     /**
@@ -82,3 +79,14 @@ class CompulsoryCourseDataExtractor(private val subjectDocument: Document) {
     }
 }
 
+private data class DataItemKey(
+        val year: String,
+        val typeOfRequirement: String?
+)
+
+private data class KnowledgeRequirementDataItem(
+        val year: String,
+        val gradeStep: GradeStep,
+        val text: String,
+        val typeOfRequirement: String?
+)

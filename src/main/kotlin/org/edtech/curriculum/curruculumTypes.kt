@@ -16,34 +16,40 @@ data class Subject(
     val skolfsId: String,
     val purposes: List<Purpose>,
     val courses: List<Course>?,
-    val centralContent: List<CentralContentGr>?,
+    val centralContents: List<CentralContentsGr>?,
     val knowledgeRequirementParagraphs: List<KnowledgeRequirementParagraphGr>?
 )
 
-data class SubjectGr(
-        val name: String,
-        val description: String,
-        val code: String,
-        val designation: String?,
-        val skolfsId: String,
-        val purposes: List<Purpose>,
-        val centralContent: List<CentralContentGr>,
-        val knowledgeRequirementParagraphs: List<KnowledgeRequirementParagraphGr>
-)
-
 enum class TypeOfCentralContent {
-    X, Y, Z
+    WITHIN_LANGUAGE_CHOICE_CHINESE,
+    WITHIN_STUDENT_CHOICE,
+    WITHIN_LANGUAGE_CHOICE,
+    BLOCK_SYLLABUS,
+    FIRST_LANGUAGE,
+    SIGN_LANGUAGE_FOR_BEGINNERS,
+    SECOND_LANGUAGE,
+    WITHIN_STUDENT_CHOICE_CHINESE,
+    MASTERY_GRADING,
+    FIN_LANGUAGE_FIRST
 }
 
 enum class TypeOfRequirement {
-    X, Y, Z
+    WITHIN_LANGUAGE_CHOICE_CHINESE,
+    WITHIN_STUDENT_CHOICE,
+    WITHIN_LANGUAGE_CHOICE,
+    BLOCK_SYLLABUS,
+    FIRST_LANGUAGE,
+    SIGN_LANGUAGE_FOR_BEGINNERS,
+    SECOND_LANGUAGE,
+    WITHIN_STUDENT_CHOICE_CHINESE,
+    MASTERY_GRADING
 }
 
-data class CentralContentGr(
+data class CentralContentsGr(
         val heading: String,
         val year: YearGroup,
         val type: TypeOfCentralContent?,
-        val lines: List<String>
+        val centralContents: List<CentralContent>
 )
 
 data class KnowledgeRequirementParagraphGr(
@@ -75,9 +81,10 @@ data class YearGroup(
 )
 
 data class CentralContent(
-    val heading: String,
-    val lines: List<String>
+        val heading: String,
+        val lines: List<String>
 )
+
 
 data class KnowledgeRequirementParagraph(
     val heading: String,

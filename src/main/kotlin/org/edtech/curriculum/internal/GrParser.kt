@@ -17,7 +17,12 @@ internal fun getKnowledgeRequirementParagraphs(html: KnowledgeRequirementGrHtml)
             .map {
                 KnowledgeRequirementParagraphGr(
                         html.heading,
-                        html.year.toInt(),
+                        // FIXME: Hadnle year == "1s"
+                        if (html.year == "1s") {
+                            1
+                        } else {
+                            html.year.toInt()
+                        },
                         typeOfRequirementParser(html.typeOfRequirement),
                         it.knowledgeRequirements
                 )

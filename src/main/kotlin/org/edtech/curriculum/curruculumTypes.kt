@@ -31,7 +31,8 @@ data class Course(
         val centralContent: List<CentralContent>,
         val knowledgeRequirementParagraphs: List<KnowledgeRequirementParagraph>,
         val point: Int? = null,
-        val year: YearGroup? = null
+        val year: YearGroup? = null,
+        val type: String? = null
 )
 
 data class YearGroup(

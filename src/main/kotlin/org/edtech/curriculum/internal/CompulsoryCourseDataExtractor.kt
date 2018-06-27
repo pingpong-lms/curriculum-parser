@@ -29,7 +29,8 @@ class CompulsoryCourseDataExtractor(private val subjectDocument: Document): Cour
                         it.year,
                         "",
                         centralContent ?: "",
-                        knowledgeRequirement)
+                        knowledgeRequirement,
+                        it.type)
             } else {
                 null
             }

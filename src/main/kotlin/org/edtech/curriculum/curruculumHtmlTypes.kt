@@ -17,5 +17,6 @@ data class CourseHtml(val name: String,
                   val year: String,
                   val point: String,
                   val centralContent: String,
-                  val knowledgeRequirement: Map<GradeStep, String>
+                  val knowledgeRequirement: Map<GradeStep, String>,
+                  val type: String? = null
 )

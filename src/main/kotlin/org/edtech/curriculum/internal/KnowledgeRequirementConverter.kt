@@ -13,6 +13,9 @@ class KnowledgeRequirementConverter {
         }
         val knowledgeRequirementResult = if (knowledgeRequirementsHtml.size == 1 && knowledgeRequirementsHtml.containsKey(GradeStep.G)) {
             baseKnowledgeRequirements(knowledgeRequirementsHtml[GradeStep.G] ?: "", GradeStep.G)
+        } else if (knowledgeRequirementsHtml.keys.toSet() == setOf(GradeStep.GK, GradeStep.FK)) {
+            var knowledgeRequirements = baseKnowledgeRequirements(knowledgeRequirementsHtml[GradeStep.GK] ?: "", GradeStep.GK)
+            addGradeStep(knowledgeRequirements, fixCurriculumErrors(knowledgeRequirementsHtml[GradeStep.FK] ?: ""), GradeStep.FK)
         } else if (knowledgeRequirementsHtml.containsKey(GradeStep.E)) {
             var knowledgeRequirements = baseKnowledgeRequirements(knowledgeRequirementsHtml[GradeStep.E] ?: "", GradeStep.E)
 

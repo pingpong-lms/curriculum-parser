@@ -5,7 +5,7 @@ enum class PurposeType {
 }
 
 enum class GradeStep {
-    F, E, D, C, B, A, G, X
+    F, E, D, C, B, A, G, X, GK, FK
 }
 
 data class Subject(
@@ -25,13 +25,14 @@ data class Purpose(
 )
 
 data class Course(
-        val name: String,
-        val description: String,
-        val code: String,
-        val centralContent: List<CentralContent>,
-        val knowledgeRequirementParagraphs: List<KnowledgeRequirementParagraph>,
-        val point: Int? = null,
-        val year: YearGroup? = null
+    val name: String,
+    val description: String,
+    val code: String,
+    val centralContent: List<CentralContent>,
+    val knowledgeRequirementParagraphs: List<KnowledgeRequirementParagraph>,
+    val point: Int? = null,
+    val year: YearGroup? = null,
+    val type: String? = null
 )
 
 data class YearGroup(

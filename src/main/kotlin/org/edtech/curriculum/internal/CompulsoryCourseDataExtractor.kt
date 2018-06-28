@@ -29,16 +29,23 @@ class CompulsoryCourseDataExtractor(private val subjectDocument: Document): Cour
                         it.year,
                         "",
                         centralContent ?: "",
-                        knowledgeRequirement)
+                        knowledgeRequirement,
+                        it.type)
             } else {
                 null
             }
         }
     }
 
+    private val MASTERY_GRADING = "MASTERY_GRADING"
+    private val BASIC_REQUIREMENTS = "BASIC_REQUIREMENTS"
+    private val ADVANCED_REQUIREMENTS = "ADVANCED_REQUIREMENTS"
+
     internal fun getCourses(): List<CourseCondition> {
         val yearRange =  subjectDocument.select("centralContent year").map { it.text() }.toSet()
-        val types =  subjectDocument.select("typeOfCentralContent, typeOfRequirement").map { it.text() }.filter { it.isNotEmpty() }.toSet()
+        val types =  subjectDocument.select("typeOfCentralContent, typeOfRequirement").map {type ->
+            if (setOf(BASIC_REQUIREMENTS, ADVANCED_REQUIREMENTS).contains(type.text())) MASTERY_GRADING else type.text()
+        }.filter { it.isNotEmpty() }.toSet()
 
         // Combine the types with year ranges
         return if (types.isNotEmpty()) {
@@ -54,12 +61,22 @@ class CompulsoryCourseDataExtractor(private val subjectDocument: Document): Cour
             .select("knowledgeRequirement")
             .filter {
                 (it.select("year").text().toIntOrNull() ?: 0) in range &&
-                (it.select("typeOfRequirement").text() == type)
+                (it.select("typeOfRequirement").text() == type || type == MASTERY_GRADING)
             }
             .map {
                 val gradeStepText = it.select("gradeStep").text()
                 // Lower years has not grade steps, convert to G level
-                val gradeStep = if (gradeStepText.isEmpty()) GradeStep.G else GradeStep.valueOf(gradeStepText)
+                val gradeStep = if (type == MASTERY_GRADING) {
+                    when (it.select("typeOfRequirement").text()) {
+                        BASIC_REQUIREMENTS -> GradeStep.GK
+                        ADVANCED_REQUIREMENTS -> GradeStep.FK
+                        else -> GradeStep.G
+                    }
+                } else if (gradeStepText.isEmpty()) {
+                    GradeStep.G
+                } else {
+                    GradeStep.valueOf(gradeStepText)
+                }
                 Pair(
                         gradeStep,
                         it.select("text").text())

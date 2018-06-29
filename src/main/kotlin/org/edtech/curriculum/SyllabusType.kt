@@ -8,7 +8,7 @@ import java.net.URL
  */
 enum class SyllabusType(val filename: String, val archivePath: String) {
     /** https://www.skolverket.se/laroplaner-amnen-och-kurser/gymnasieutbildning/...
-     * The same file is used for thiese
+     * The same file is used for these
      */
     GR("compulsory", "compulsory/subject-compulsory-S2_0/grundskolan/"),
     GRSAM("compulsory", "compulsory/subject-compulsory-S2_0/sameskolan/"),

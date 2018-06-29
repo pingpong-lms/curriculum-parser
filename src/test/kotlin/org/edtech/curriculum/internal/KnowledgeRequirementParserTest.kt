@@ -23,6 +23,10 @@ class KnowledgeRequirementParserTest {
         testAgainstJsonFiles(SyllabusType.GRS)
     }
     @Test
+    fun testAgainstJsonFilesGRSPEC() {
+        testAgainstJsonFiles(SyllabusType.GRSPEC)
+    }
+    @Test
     fun testAgainstJsonFilesGY() {
         testAgainstJsonFiles(SyllabusType.GY)
     }
@@ -164,8 +168,9 @@ class KnowledgeRequirementParserTest {
                         it.knowledgeRequirements.forEach {
                             val gradeSteps = it.knowledgeRequirementChoice
                             if (!gradeSteps.keys.containsAll(setOf(GradeStep.A, GradeStep.C, GradeStep.E)) &&
+                                    (!gradeSteps.keys.containsAll(setOf(GradeStep.GK, GradeStep.FK))) &&
                                     !gradeSteps.keys.contains(GradeStep.G)) {
-                                fail("Knowledge Requirement Choices should be either E,C,A or G failed for: ${subject.name}/${course.name}")
+                                fail("Knowledge Requirement Choices should be either E,C,A or GK,FK or G failed for: ${subject.name}/${course.name}")
                             }
                             gradeSteps.forEach { gradeStep ->
                                 if (gradeStep.value.isBlank())

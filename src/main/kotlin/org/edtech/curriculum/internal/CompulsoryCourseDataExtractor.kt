@@ -1,6 +1,8 @@
 package org.edtech.curriculum.internal
 
-import org.edtech.curriculum.*
+import org.edtech.curriculum.CourseHtml
+import org.edtech.curriculum.GradeStep
+import org.edtech.curriculum.stringToRange
 import org.jsoup.nodes.Document
 
 /**
@@ -45,7 +47,10 @@ class CompulsoryCourseDataExtractor(private val subjectDocument: Document): Cour
         val yearRange =  subjectDocument.select("centralContent year").map { it.text() }.toSet()
         val types =  subjectDocument.select("typeOfCentralContent, typeOfRequirement").map {type ->
             if (setOf(BASIC_REQUIREMENTS, ADVANCED_REQUIREMENTS).contains(type.text())) MASTERY_GRADING else type.text()
-        }.filter { it.isNotEmpty() }.toSet()
+        }.toMutableSet()
+        if (types.contains("SIGN_LANGUAGE_FOR_BEGINNERS")) {
+            types.add("")
+        }
 
         // Combine the types with year ranges
         return if (types.isNotEmpty()) {

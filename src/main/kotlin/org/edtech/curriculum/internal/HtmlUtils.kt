@@ -2,7 +2,6 @@
 
 package org.edtech.curriculum.internal
 
-import org.edtech.curriculum.CentralContent
 import org.edtech.curriculum.Purpose
 import org.edtech.curriculum.PurposeType
 import org.edtech.curriculum.YearGroup
@@ -33,6 +32,7 @@ internal fun fixCurriculumErrors(text: String): String {
     return fixHtmlEncoding(text)
             .replace(Regex("(?<=[a-zåäö]) (Vidare|Eleven|Dessutom)"), ". $1")
             .replace("<br/>", " ")
+            .replace("<br />", " ")
             .replace("<br>", " ")
             .replace(Regex("<italic>([^<]*)</italic>"), "$1")
             .replace(".</p><p>.</p>", ".</p>")

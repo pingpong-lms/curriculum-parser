@@ -5,9 +5,9 @@ import java.io.File
 
 fun main(args : Array<String>) {
     if (args.isEmpty()) {
-        for (syllabusType in SyllabusType.values()) {
-            val subjectMap = getSubjectCodeMap(syllabusType)
-            val subjectDir = File(VALID_JSONS_PATH + syllabusType.name)
+        for (schoolType in SchoolType.values()) {
+            val subjectMap = getSubjectCodeMap(schoolType)
+            val subjectDir = File(VALID_JSONS_PATH + schoolType.name)
             if (subjectDir.isDirectory) {
                 for (file in subjectDir.listFiles()) {
                     if (!file.name.endsWith(".json")) continue
@@ -24,25 +24,25 @@ fun main(args : Array<String>) {
             }
         }
     } else if (args.size == 2) {
-        if (SyllabusType.values().map { it.name }.contains(args[0])) {
-            val subjectMap = getSubjectCodeMap(SyllabusType.valueOf(args[0]))
+        if (SchoolType.values().map { it.name }.contains(args[0])) {
+            val subjectMap = getSubjectCodeMap(SchoolType.valueOf(args[0]))
             val subject= subjectMap[args[1]]
             if (subject != null) {
                 writeSubjectToFile(subject, File("$VALID_JSONS_PATH${args[0]}/${args[1]}.json"))
             } else {
-                println("ERROR: cannot find subject ${args[1]} in syllabus ${args[0]}.")
+                println("ERROR: cannot find subject ${args[1]} in curriculum ${args[0]}.")
                 System.exit(1)
             }
         }
     } else {
         println("ERROR: Incorrect parameter format.")
-        println("Usage: RegenerateExpectedResult [<syllabusType> <subjectCode> | ]")
+        println("Usage: RegenerateExpectedResult [<schoolType> <subjectCode> | ]")
         System.exit(1)
     }
 }
 
-fun getSubjectCodeMap(syllabusType: SyllabusType): Map<String, Subject> {
-    return Syllabus(syllabusType, File(DOWNLOADED_ARCHIVES_PATH))
+fun getSubjectCodeMap(schoolType: SchoolType): Map<String, Subject> {
+    return Curriculum(schoolType, File(DOWNLOADED_ARCHIVES_PATH))
             .getSubjects()
             .map { Pair(it.code, it) }
             .toMap()

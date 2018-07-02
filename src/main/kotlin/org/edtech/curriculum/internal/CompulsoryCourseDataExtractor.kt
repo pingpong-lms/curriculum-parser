@@ -46,8 +46,13 @@ class CompulsoryCourseDataExtractor(private val subjectDocument: Document): Cour
     internal fun getCourses(): List<CourseCondition> {
         val yearRange =  subjectDocument.select("centralContent year").map { it.text() }.toSet()
         val types =  subjectDocument.select("typeOfCentralContent, typeOfRequirement").map {type ->
-            if (setOf(BASIC_REQUIREMENTS, ADVANCED_REQUIREMENTS).contains(type.text())) MASTERY_GRADING else type.text()
+            if (setOf(BASIC_REQUIREMENTS, ADVANCED_REQUIREMENTS).contains(type.text())) {
+                ""
+            } else {
+                type.text()
+            }
         }.toMutableSet()
+
         if (types.contains("SIGN_LANGUAGE_FOR_BEGINNERS")) {
             types.add("")
         }
@@ -66,12 +71,12 @@ class CompulsoryCourseDataExtractor(private val subjectDocument: Document): Cour
             .select("knowledgeRequirement")
             .filter {
                 (it.select("year").text().toIntOrNull() ?: 0) in range &&
-                (it.select("typeOfRequirement").text() == type || type == MASTERY_GRADING)
+                (it.select("typeOfRequirement").text() == type || setOf(BASIC_REQUIREMENTS, ADVANCED_REQUIREMENTS).contains(it.select("typeOfRequirement").text()))
             }
             .map {
                 val gradeStepText = it.select("gradeStep").text()
                 // Lower years has not grade steps, convert to G level
-                val gradeStep = if (type == MASTERY_GRADING) {
+                val gradeStep = if (type == "") {
                     when (it.select("typeOfRequirement").text()) {
                         BASIC_REQUIREMENTS -> GradeStep.GK
                         ADVANCED_REQUIREMENTS -> GradeStep.FK

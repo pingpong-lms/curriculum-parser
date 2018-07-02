@@ -21,7 +21,14 @@ class SkolverketFileArchive(private val archiveFile: File) {
         return SyllabusType.values().firstOrNull { it.filename == archiveFile.nameWithoutExtension  }
                 ?: throw SkolverketFileArchiveFileNotFound("Unknown file type")
     }
-    
+
+    /**
+     * Analyze the file structure to figure out the corresponding SyllabusType types
+     */
+    fun getTypes(): Set<SyllabusType> {
+        return SyllabusType.values().filter { it.filename == archiveFile.nameWithoutExtension  }.toSet()
+    }
+
     /**
      * Return a file stream for the specified file
      */

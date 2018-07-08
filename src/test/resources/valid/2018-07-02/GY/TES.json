@@ -119,7 +119,8 @@
       "year" : null
     } ],
     "point" : 100,
-    "year" : null
+    "year" : null,
+    "type" : null
   }, {
     "name" : "Projektering VVS 1",
     "description" : "Kursen projektering VVS 1 omfattar punkterna 1, 5 och 7–10 under rubriken Ämnets syfte, med särskild betoning på punkt 8.",
@@ -245,7 +246,8 @@
       "year" : null
     } ],
     "point" : 100,
-    "year" : null
+    "year" : null,
+    "type" : null
   }, {
     "name" : "Projektering VVS 2",
     "description" : "Kursen projektering VVS 2 omfattar punkterna 1, 3, 4, 7 och 8 under rubriken Ämnets syfte.",
@@ -353,7 +355,8 @@
       "year" : null
     } ],
     "point" : 100,
-    "year" : null
+    "year" : null,
+    "type" : null
   } ],
   "createdDate" : null,
   "modifiedDate" : null,

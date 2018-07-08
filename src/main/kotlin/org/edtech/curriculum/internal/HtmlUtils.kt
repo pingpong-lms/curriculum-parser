@@ -183,3 +183,12 @@ internal fun toPurposes(html: String): List<Purpose> {
                 }
             }
 }
+
+internal inline fun <reified T : kotlin.Enum<T>> valueOfOrNull(type: String?): T? {
+    if(type.isNullOrBlank()) return null
+    return try {
+        java.lang.Enum.valueOf(T::class.java, type)
+    } catch (e :IllegalArgumentException) {
+        throw IllegalArgumentException("Invalid type for ${T::class.java}: '$type'")
+    }
+}

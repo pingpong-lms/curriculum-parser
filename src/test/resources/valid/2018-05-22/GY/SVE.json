@@ -100,7 +100,8 @@
       "year" : null
     } ],
     "point" : 100,
-    "year" : null
+    "year" : null,
+    "type" : null
   }, {
     "name" : "Retorik",
     "description" : "Kursen retorik omfattar punkterna 1–3 under rubriken Ämnets syfte.",
@@ -193,7 +194,8 @@
       "year" : null
     } ],
     "point" : 100,
-    "year" : null
+    "year" : null,
+    "type" : null
   }, {
     "name" : "Skrivande",
     "description" : "Kursen skrivande omfattar punkterna 2–4 och 6–8 under rubriken Ämnets syfte.",
@@ -280,7 +282,8 @@
       "year" : null
     } ],
     "point" : 100,
-    "year" : null
+    "year" : null,
+    "type" : null
   }, {
     "name" : "Svenska 1",
     "description" : "Kursen svenska 1 omfattar punkterna 1–9 under rubriken Ämnets syfte.",
@@ -409,7 +412,8 @@
       "year" : null
     } ],
     "point" : 100,
-    "year" : null
+    "year" : null,
+    "type" : null
   }, {
     "name" : "Svenska 2",
     "description" : "Kursen svenska 2 omfattar punkterna 1–9 under rubriken Ämnets syfte.",
@@ -556,7 +560,8 @@
       "year" : null
     } ],
     "point" : 100,
-    "year" : null
+    "year" : null,
+    "type" : null
   }, {
     "name" : "Svenska 3",
     "description" : "Kursen svenska 3 omfattar punkterna 1–9 under rubriken Ämnets syfte.",
@@ -703,7 +708,8 @@
       "year" : null
     } ],
     "point" : 100,
-    "year" : null
+    "year" : null,
+    "type" : null
   } ],
   "createdDate" : null,
   "modifiedDate" : null,

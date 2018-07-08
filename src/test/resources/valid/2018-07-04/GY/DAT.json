@@ -133,7 +133,8 @@
       "year" : null
     } ],
     "point" : 100,
-    "year" : null
+    "year" : null,
+    "type" : null
   }, {
     "name" : "Dansteknik 2",
     "description" : "Kursen dansteknik 2 omfattar punkterna 1–6 och 8 under rubriken Ämnets syfte, med särskild betoning på punkterna 2–6. I kursen behandlas färdigheter inom vald genre.",
@@ -269,7 +270,8 @@
       "year" : null
     } ],
     "point" : 100,
-    "year" : null
+    "year" : null,
+    "type" : null
   }, {
     "name" : "Dansteknik 3",
     "description" : "Kursen dansteknik 3 omfattar punkterna 1–8 under rubriken Ämnets syfte, med särskild betoning på punkterna 2–6. I kursen behandlas fördjupade färdigheter inom vald genre.",
@@ -405,7 +407,8 @@
       "year" : null
     } ],
     "point" : 100,
-    "year" : null
+    "year" : null,
+    "type" : null
   }, {
     "name" : "Dansteknik 4",
     "description" : "Kursen dansteknik 4 omfattar punkterna 1–8 under rubriken Ämnets syfte, med särskild betoning på punkterna 2–5 och 7–8. I kursen behandlas avancerade färdigheter inom vald genre.",
@@ -534,7 +537,8 @@
       "year" : null
     } ],
     "point" : 100,
-    "year" : null
+    "year" : null,
+    "type" : null
   }, {
     "name" : "Dansteknik – specialisering",
     "description" : "Kursen dansteknik – specialisering omfattar punkterna 1–8 under rubriken Ämnets syfte. I kursen behandlas fördjupade färdigheter inom vald genre.",
@@ -659,7 +663,8 @@
       "year" : null
     } ],
     "point" : 100,
-    "year" : null
+    "year" : null,
+    "type" : null
   }, {
     "name" : "Dansträning",
     "description" : "Kursen dansträning omfattar punkterna 2 och 6–9 under rubriken Ämnets syfte. I kursen behandlas grundläggande kunskaper i ämnet.",
@@ -789,7 +794,8 @@
       "year" : null
     } ],
     "point" : 100,
-    "year" : null
+    "year" : null,
+    "type" : null
   } ],
   "createdDate" : null,
   "modifiedDate" : null,

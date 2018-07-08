@@ -137,7 +137,8 @@
       "year" : null
     } ],
     "point" : 100,
-    "year" : null
+    "year" : null,
+    "type" : null
   }, {
     "name" : "Hälsopedagogik",
     "description" : "Kursen hälsopedagogik omfattar punkterna 1–2 och 4–9 under rubriken Ämnets syfte.",
@@ -273,7 +274,8 @@
       "year" : null
     } ],
     "point" : 100,
-    "year" : null
+    "year" : null,
+    "type" : null
   }, {
     "name" : "Kost och hälsa",
     "description" : "Kursen kost och hälsa omfattar punkterna 1–2, 4–5, 8 och 9 under rubriken Ämnets syfte.",
@@ -345,7 +347,8 @@
       "year" : null
     } ],
     "point" : 100,
-    "year" : null
+    "year" : null,
+    "type" : null
   }, {
     "name" : "Mental träning",
     "description" : "Kursen mental träning omfattar punkterna 1–2, 4, 7 och 9 under rubriken Ämnets syfte.",
@@ -439,7 +442,8 @@
       "year" : null
     } ],
     "point" : 100,
-    "year" : null
+    "year" : null,
+    "type" : null
   } ],
   "createdDate" : null,
   "modifiedDate" : null,

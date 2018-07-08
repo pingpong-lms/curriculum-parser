@@ -139,7 +139,8 @@
       "year" : null
     } ],
     "point" : 100,
-    "year" : null
+    "year" : null,
+    "type" : null
   }, {
     "name" : "Idrottsspecialisering 1",
     "description" : "Kursen idrottsspecialisering 1 omfattar punkterna 1–2 och 4–7 under rubriken Ämnets syfte.",
@@ -240,7 +241,8 @@
       "year" : null
     } ],
     "point" : 100,
-    "year" : null
+    "year" : null,
+    "type" : null
   }, {
     "name" : "Idrottsspecialisering 2",
     "description" : "Kursen idrottsspecialisering 2 omfattar punkterna 1–2 och 4–7 under rubriken Ämnets syfte. I kursen behandlas fördjupade kunskaper inom vald idrott.",
@@ -351,7 +353,8 @@
       "year" : null
     } ],
     "point" : 100,
-    "year" : null
+    "year" : null,
+    "type" : null
   }, {
     "name" : "Idrottsspecialisering 3",
     "description" : "Kursen idrottsspecialisering 3 omfattar punkterna 1–2 och 4–7 under rubriken Ämnets syfte. I kursen behandlas fördjupade kunskaper inom vald idrott.",
@@ -465,7 +468,8 @@
       "year" : null
     } ],
     "point" : 100,
-    "year" : null
+    "year" : null,
+    "type" : null
   }, {
     "name" : "Tränings- och tävlingslära 1",
     "description" : "Kursen tränings- och tävlingslära 1 omfattar punkterna 2 och 4–6 under rubriken Ämnets syfte, med särskild betoning på punkterna 2 och 4. I kursen behandlas grundläggande kunskaper i ämnet.",
@@ -576,7 +580,8 @@
       "year" : null
     } ],
     "point" : 100,
-    "year" : null
+    "year" : null,
+    "type" : null
   }, {
     "name" : "Tränings- och tävlingslära 2",
     "description" : "Kursen tränings- och tävlingslära 2 omfattar punkterna 2 och 4–6 under rubriken Ämnets syfte. I kursen behandlas fördjupade kunskaper i ämnet.",
@@ -708,7 +713,8 @@
       "year" : null
     } ],
     "point" : 100,
-    "year" : null
+    "year" : null,
+    "type" : null
   }, {
     "name" : "Tränings- och tävlingslära 3",
     "description" : "Kursen tränings- och tävlingslära 3 omfattar punkterna 2 och 4–6 under rubriken Ämnets syfte. I kursen behandlas fördjupade kunskaper i ämnet.",
@@ -847,7 +853,8 @@
       "year" : null
     } ],
     "point" : 100,
-    "year" : null
+    "year" : null,
+    "type" : null
   } ],
   "createdDate" : null,
   "modifiedDate" : null,

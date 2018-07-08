@@ -88,7 +88,8 @@
       "year" : null
     } ],
     "point" : 100,
-    "year" : null
+    "year" : null,
+    "type" : null
   }, {
     "name" : "Lantbruksdjur 2",
     "description" : "Kursen lantbruksdjur 2 omfattar punkterna 1–5 under rubriken Ämnets syfte. I kursen behandlas fördjupade kunskaper i ämnet.",
@@ -147,7 +148,8 @@
       "year" : null
     } ],
     "point" : 100,
-    "year" : null
+    "year" : null,
+    "type" : null
   }, {
     "name" : "Lantbruksdjur 3",
     "description" : "Kursen lantbruksdjur 3 omfattar punkterna 1–5 under rubriken Ämnets syfte. I kursen behandlas fördjupade kunskaper i ämnet.",
@@ -197,12 +199,13 @@
       "year" : null
     } ],
     "point" : 100,
-    "year" : null
+    "year" : null,
+    "type" : null
   } ],
   "createdDate" : null,
   "modifiedDate" : null,
   "typeOfSyllabus" : null,
-  "typeOfSchooling" : null,
+  "typeOfSchooling" : "EDU_FOR_ADULTS_WITH_LEARNING_DISABILITIES",
   "originatorTypeOfSchooling" : null,
   "gradeScale" : "",
   "validTo" : null,

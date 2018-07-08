@@ -131,7 +131,8 @@
     "year" : {
       "start" : 1,
       "end" : 6
-    }
+    },
+    "type" : null
   }, {
     "name" : "Årskurs 7-9",
     "description" : "",
@@ -237,7 +238,8 @@
     "year" : {
       "start" : 7,
       "end" : 9
-    }
+    },
+    "type" : null
   } ],
   "createdDate" : "2018-05-25T12:39:54",
   "modifiedDate" : "2018-06-13T10:08:47",

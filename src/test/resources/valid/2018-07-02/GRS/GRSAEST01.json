@@ -94,7 +94,8 @@
     "year" : {
       "start" : 1,
       "end" : 9
-    }
+    },
+    "type" : "BASIC_REQUIREMENTS"
   }, {
     "name" : "Årskurs 1-9  ADVANCED_REQUIREMENTS",
     "description" : "",
@@ -163,7 +164,8 @@
     "year" : {
       "start" : 1,
       "end" : 9
-    }
+    },
+    "type" : "ADVANCED_REQUIREMENTS"
   } ],
   "createdDate" : "2018-05-28T08:56:14",
   "modifiedDate" : "2018-06-13T13:09:15",

@@ -16,15 +16,6 @@ class IndividualFiledSubjectDataExtractor(private val skolverketFileArchive: Sko
         }.toList()
     }
 
-    private inline fun <reified T : kotlin.Enum<T>> valueOfOrNull(type: String?): T? {
-        if(type.isNullOrBlank()) return null
-        return try {
-            java.lang.Enum.valueOf(T::class.java, type)
-        } catch (e :IllegalArgumentException) {
-            throw IllegalArgumentException("Invalid type for ${T::class.java}: '${type}'")
-        }
-    }
-
     private fun getSubject(openDataDocumentStream: InputStream): SubjectHtml {
         val openDataDocument = Jsoup.parse(openDataDocumentStream, null, "", Parser.xmlParser())
         fun extractString(elementName: String): String = openDataDocument.select("subject > $elementName").text()

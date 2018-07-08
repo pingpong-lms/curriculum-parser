@@ -102,7 +102,8 @@
       "year" : null
     } ],
     "point" : 100,
-    "year" : null
+    "year" : null,
+    "type" : null
   }, {
     "name" : "Engelska 2",
     "description" : "Kursen engelska 2 omfattar punkterna 1–4 under rubriken Ämnets syfte. I kursen behandlas fördjupade kunskaper i ämnet.",
@@ -183,7 +184,8 @@
       "year" : null
     } ],
     "point" : 100,
-    "year" : null
+    "year" : null,
+    "type" : null
   }, {
     "name" : "Engelska 3",
     "description" : "Kursen engelska 3 omfattar punkterna 1–4 under rubriken Ämnets syfte. I kursen behandlas fördjupade kunskaper i ämnet.",
@@ -264,12 +266,13 @@
       "year" : null
     } ],
     "point" : 100,
-    "year" : null
+    "year" : null,
+    "type" : null
   } ],
   "createdDate" : null,
   "modifiedDate" : null,
   "typeOfSyllabus" : null,
-  "typeOfSchooling" : null,
+  "typeOfSchooling" : "EDU_FOR_ADULTS_WITH_LEARNING_DISABILITIES",
   "originatorTypeOfSchooling" : null,
   "gradeScale" : "",
   "validTo" : null,

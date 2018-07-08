@@ -155,7 +155,8 @@
       "year" : null
     } ],
     "point" : 150,
-    "year" : null
+    "year" : null,
+    "type" : null
   } ],
   "createdDate" : null,
   "modifiedDate" : null,

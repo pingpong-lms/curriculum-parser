@@ -24,8 +24,8 @@ enum class TypeOfSchooling {
 enum class GradeStep {
     F, E, D, C, B, A, G, X, BASIC, ADVANCED
 }
-/*
-enum class TypeOfRequirement {
+
+enum class TypeOfCourse {
     WITHIN_LANGUAGE_CHOICE,
     WITHIN_STUDENT_CHOICE,
     SIGN_LANGUAGE_FOR_BEGINNERS,
@@ -40,9 +40,10 @@ enum class TypeOfRequirement {
     WITHIN_LANGUAGE_CHOICE_CHINESE,
     WITHIN_STUDENT_CHOICE_CHINESE,
     SECOND_LANGUAGE,
-    FIRST_LANGUAGE
+    FIRST_LANGUAGE,
+    BASIC_REQUIREMENTS,
+    ADVANCED_REQUIREMENTS
 }
-*/
 
 enum class AspectType {
     LISTENING_COMPREHENSION,
@@ -65,6 +66,7 @@ data class Subject(
         val modifiedDate: LocalDateTime?,
         val typeOfSyllabus: SyllabusType?,
         val typeOfSchooling: TypeOfSchooling?,
+        val originatorTypeOfSchooling: TypeOfSchooling?,
         val gradeScale: String?,
         val validTo: LocalDateTime?,
         val applianceDate: LocalDateTime?
@@ -83,7 +85,8 @@ data class Course(
         val centralContent: List<CentralContent>,
         val knowledgeRequirementParagraphs: List<KnowledgeRequirementParagraph>,
         val point: Int? = null,
-        val year: YearGroup? = null
+        val year: YearGroup? = null,
+        val type: TypeOfCourse?
 )
 
 data class YearGroup(

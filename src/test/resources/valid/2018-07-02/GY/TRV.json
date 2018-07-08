@@ -138,7 +138,8 @@
       "year" : null
     } ],
     "point" : 100,
-    "year" : null
+    "year" : null,
+    "type" : null
   }, {
     "name" : "Trav 2",
     "description" : "Kursen trav 2 omfattar punkterna 1–9 under rubriken Ämnets syfte.",
@@ -259,7 +260,8 @@
       "year" : null
     } ],
     "point" : 100,
-    "year" : null
+    "year" : null,
+    "type" : null
   } ],
   "createdDate" : null,
   "modifiedDate" : null,

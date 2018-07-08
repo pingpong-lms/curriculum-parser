@@ -169,7 +169,8 @@
       "year" : null
     } ],
     "point" : 100,
-    "year" : null
+    "year" : null,
+    "type" : null
   }, {
     "name" : "Biologi 2",
     "description" : "Kursen biologi 2 omfattar punkterna 1–5 under rubriken Ämnets syfte.",
@@ -314,7 +315,8 @@
       "year" : null
     } ],
     "point" : 100,
-    "year" : null
+    "year" : null,
+    "type" : null
   }, {
     "name" : "Bioteknik",
     "description" : "Kursen bioteknik omfattar punkterna 1–5 under rubriken Ämnets syfte.",
@@ -429,7 +431,8 @@
       "year" : null
     } ],
     "point" : 100,
-    "year" : null
+    "year" : null,
+    "type" : null
   } ],
   "createdDate" : null,
   "modifiedDate" : null,

@@ -26,7 +26,8 @@ data class CourseHtml(
         val year: String,
         val point: String,
         val centralContent: String,
-        val knowledgeRequirementGroups: List<RequirementGroup>
+        val knowledgeRequirementGroups: List<RequirementGroup>,
+        val type : TypeOfCourse? = null
 )
 
 data class RequirementGroup(

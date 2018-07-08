@@ -1,6 +1,7 @@
 package org.edtech.curriculum.internal
 
-import org.edtech.curriculum.*
+import org.edtech.curriculum.Course
+import org.edtech.curriculum.CourseHtml
 
 internal class CourseParser(private val courseData: CourseHtml) {
 
@@ -15,7 +16,8 @@ internal class CourseParser(private val courseData: CourseHtml) {
                 CentralContentConverter().getCentralContents(courseData.centralContent),
                 KnowledgeRequirementConverter().getKnowledgeRequirements(courseData.knowledgeRequirementGroups),
                 courseData.point.toIntOrNull(),
-                toYearGroup(courseData.year)
+                toYearGroup(courseData.year),
+                courseData.type
         )
     }
 }

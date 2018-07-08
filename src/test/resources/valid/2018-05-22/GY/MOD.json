@@ -137,7 +137,8 @@
       "year" : null
     } ],
     "point" : 100,
-    "year" : null
+    "year" : null,
+    "type" : null
   }, {
     "name" : "Kinesiska 2",
     "description" : "Kursen kinesiska 2 omfattar punkterna 1–5 under rubriken Ämnets syfte.",
@@ -312,7 +313,8 @@
       "year" : null
     } ],
     "point" : 100,
-    "year" : null
+    "year" : null,
+    "type" : null
   }, {
     "name" : "Kinesiska 3",
     "description" : "Kursen kinesiska 3 omfattar punkterna 1–5 under rubriken Ämnets syfte.",
@@ -501,7 +503,8 @@
       "year" : null
     } ],
     "point" : 100,
-    "year" : null
+    "year" : null,
+    "type" : null
   }, {
     "name" : "Kinesiska 4",
     "description" : "Kursen kinesiska 4 omfattar punkterna 1–5 under rubriken Ämnets syfte.",
@@ -690,7 +693,8 @@
       "year" : null
     } ],
     "point" : 100,
-    "year" : null
+    "year" : null,
+    "type" : null
   }, {
     "name" : "Kinesiska 5",
     "description" : "Kursen kinesiska 5 omfattar punkterna 1–5 under rubriken Ämnets syfte.",
@@ -886,7 +890,8 @@
       "year" : null
     } ],
     "point" : 100,
-    "year" : null
+    "year" : null,
+    "type" : null
   }, {
     "name" : "Kinesiska 6",
     "description" : "Kursen kinesiska 6 omfattar punkterna 1–5 under rubriken Ämnets syfte.",
@@ -1082,7 +1087,8 @@
       "year" : null
     } ],
     "point" : 100,
-    "year" : null
+    "year" : null,
+    "type" : null
   }, {
     "name" : "Kinesiska 7",
     "description" : "Kursen kinesiska 7 omfattar punkterna 1–5 under rubriken Ämnets syfte.",
@@ -1278,7 +1284,8 @@
       "year" : null
     } ],
     "point" : 100,
-    "year" : null
+    "year" : null,
+    "type" : null
   }, {
     "name" : "Moderna språk 1",
     "description" : "Kursen moderna språk 1 omfattar punkterna 1–5 under rubriken Ämnets syfte.",
@@ -1385,7 +1392,8 @@
       "year" : null
     } ],
     "point" : 100,
-    "year" : null
+    "year" : null,
+    "type" : null
   }, {
     "name" : "Moderna språk 2",
     "description" : "Kursen moderna språk 2 omfattar punkterna 1–5 under rubriken Ämnets syfte.",
@@ -1492,7 +1500,8 @@
       "year" : null
     } ],
     "point" : 100,
-    "year" : null
+    "year" : null,
+    "type" : null
   }, {
     "name" : "Moderna språk 3",
     "description" : "Kursen moderna språk 3 omfattar punkterna 1–5 under rubriken Ämnets syfte.",
@@ -1599,7 +1608,8 @@
       "year" : null
     } ],
     "point" : 100,
-    "year" : null
+    "year" : null,
+    "type" : null
   }, {
     "name" : "Moderna språk 4",
     "description" : "Kursen moderna språk 4 omfattar punkterna 1–5 under rubriken Ämnets syfte.",
@@ -1706,7 +1716,8 @@
       "year" : null
     } ],
     "point" : 100,
-    "year" : null
+    "year" : null,
+    "type" : null
   }, {
     "name" : "Moderna språk 5",
     "description" : "Kursen moderna språk 5 omfattar punkterna 1–5 under rubriken Ämnets syfte.",
@@ -1820,7 +1831,8 @@
       "year" : null
     } ],
     "point" : 100,
-    "year" : null
+    "year" : null,
+    "type" : null
   }, {
     "name" : "Moderna språk 6",
     "description" : "Kursen moderna språk 6 omfattar punkterna 1–5 under rubriken Ämnets syfte.",
@@ -1934,7 +1946,8 @@
       "year" : null
     } ],
     "point" : 100,
-    "year" : null
+    "year" : null,
+    "type" : null
   }, {
     "name" : "Moderna språk 7",
     "description" : "Kursen moderna språk 7 omfattar punkterna 1–5 under rubriken Ämnets syfte.",
@@ -2048,7 +2061,8 @@
       "year" : null
     } ],
     "point" : 100,
-    "year" : null
+    "year" : null,
+    "type" : null
   } ],
   "createdDate" : null,
   "modifiedDate" : null,

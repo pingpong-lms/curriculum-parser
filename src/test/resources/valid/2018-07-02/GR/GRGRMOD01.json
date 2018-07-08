@@ -50,7 +50,8 @@
     "year" : {
       "start" : 1,
       "end" : 3
-    }
+    },
+    "type" : null
   }, {
     "name" : "Årskurs 4-6",
     "description" : "",
@@ -161,7 +162,8 @@
     "year" : {
       "start" : 4,
       "end" : 6
-    }
+    },
+    "type" : null
   }, {
     "name" : "Årskurs 7-9",
     "description" : "",
@@ -286,7 +288,8 @@
     "year" : {
       "start" : 7,
       "end" : 9
-    }
+    },
+    "type" : null
   } ],
   "createdDate" : "2018-04-10T15:50:14",
   "modifiedDate" : "2018-04-10T15:51:13",

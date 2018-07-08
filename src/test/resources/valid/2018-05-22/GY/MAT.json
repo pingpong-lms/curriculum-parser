@@ -143,7 +143,8 @@
       "year" : null
     } ],
     "point" : 100,
-    "year" : null
+    "year" : null,
+    "type" : null
   }, {
     "name" : "Matematik 1b",
     "description" : "Kursen matematik 1b omfattar punkterna 1–7 under rubriken Ämnets syfte. I kursen behandlas grundläggande kunskaper i ämnet.",
@@ -269,7 +270,8 @@
       "year" : null
     } ],
     "point" : 100,
-    "year" : null
+    "year" : null,
+    "type" : null
   }, {
     "name" : "Matematik 1c",
     "description" : "Kursen matematik 1c omfattar punkterna 1–7 under rubriken Ämnets syfte. I kursen behandlas grundläggande kunskaper i ämnet.",
@@ -395,7 +397,8 @@
       "year" : null
     } ],
     "point" : 100,
-    "year" : null
+    "year" : null,
+    "type" : null
   }, {
     "name" : "Matematik 2a",
     "description" : "Kursen matematik 2a omfattar punkterna 1–7 under rubriken Ämnets syfte.",
@@ -518,7 +521,8 @@
       "year" : null
     } ],
     "point" : 100,
-    "year" : null
+    "year" : null,
+    "type" : null
   }, {
     "name" : "Matematik 2b",
     "description" : "Kursen matematik 2b omfattar punkterna 1–7 under rubriken Ämnets syfte.",
@@ -644,7 +648,8 @@
       "year" : null
     } ],
     "point" : 100,
-    "year" : null
+    "year" : null,
+    "type" : null
   }, {
     "name" : "Matematik 2c",
     "description" : "Kursen matematik 2 omfattar punkterna 1–7 under rubriken Ämnets syfte.",
@@ -770,7 +775,8 @@
       "year" : null
     } ],
     "point" : 100,
-    "year" : null
+    "year" : null,
+    "type" : null
   }, {
     "name" : "Matematik 3b",
     "description" : "Kursen matematik 3b omfattar punkterna 1–7 under rubriken Ämnets syfte.",
@@ -890,7 +896,8 @@
       "year" : null
     } ],
     "point" : 100,
-    "year" : null
+    "year" : null,
+    "type" : null
   }, {
     "name" : "Matematik 3c",
     "description" : "Kursen matematik 3 omfattar punkterna 1–7 under rubriken Ämnets syfte. I kursen behandlas fördjupade kunskaper i ämnet.",
@@ -1010,7 +1017,8 @@
       "year" : null
     } ],
     "point" : 100,
-    "year" : null
+    "year" : null,
+    "type" : null
   }, {
     "name" : "Matematik 4",
     "description" : "Kursen matematik 4 omfattar punkterna 1–7 under rubriken Ämnets syfte. I kursen behandlas fördjupade kunskaper i ämnet.",
@@ -1130,7 +1138,8 @@
       "year" : null
     } ],
     "point" : 100,
-    "year" : null
+    "year" : null,
+    "type" : null
   }, {
     "name" : "Matematik 5",
     "description" : "Kursen matematik 5 omfattar punkterna 1–7 under rubriken Ämnets syfte. I kursen behandlas fördjupade kunskaper i ämnet.",
@@ -1250,7 +1259,8 @@
       "year" : null
     } ],
     "point" : 100,
-    "year" : null
+    "year" : null,
+    "type" : null
   }, {
     "name" : "Matematik – specialisering",
     "description" : "Kursen matematik – specialisering omfattar punkterna 1–7 under rubriken Ämnets syfte. I kursen behandlas fördjupade kunskaper i ämnet.",
@@ -1367,7 +1377,8 @@
       "year" : null
     } ],
     "point" : 100,
-    "year" : null
+    "year" : null,
+    "type" : null
   } ],
   "createdDate" : null,
   "modifiedDate" : null,

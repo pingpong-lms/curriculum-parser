@@ -114,7 +114,8 @@
       "year" : null
     } ],
     "point" : 100,
-    "year" : null
+    "year" : null,
+    "type" : null
   }, {
     "name" : "Webbserverprogrammering 2",
     "description" : "Kursen webbserverprogrammering 2 omfattar punkterna 1–8 under rubriken Ämnets syfte.",
@@ -214,7 +215,8 @@
       "year" : null
     } ],
     "point" : 100,
-    "year" : null
+    "year" : null,
+    "type" : null
   }, {
     "name" : "Webbtjänster",
     "description" : "Kursen webbtjänster omfattar punkterna 1–8 under rubriken Ämnets syfte.",
@@ -328,7 +330,8 @@
       "year" : null
     } ],
     "point" : 100,
-    "year" : null
+    "year" : null,
+    "type" : null
   } ],
   "createdDate" : null,
   "modifiedDate" : null,
